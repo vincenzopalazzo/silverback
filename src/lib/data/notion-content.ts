@@ -4,7 +4,7 @@
  *
  * The website never calls Notion at runtime; content is baked in at sync time.
  *
- * Last fetched: 2026-07-26T14:31:02.358Z
+ * Last fetched: 2026-07-26T14:34:44.367Z
  * Sources: site=defaults, copy=defaults, stats=defaults, principles=defaults, repos=defaults, activity=defaults, timeline=defaults, governance=defaults, maintainers=defaults, steps=defaults, issues=defaults, channels=defaults, posts=defaults, taglines=defaults, footerCols=defaults
  */
 
