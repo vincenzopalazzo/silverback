@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { content } from '$lib/data/notion-content';
 
 	const { copy, posts } = content;
@@ -23,7 +24,7 @@
 			<div class="featured-cta mono">{copy.updates_featured_cta}</div>
 		</div>
 		<div class="featured-logo">
-			<img src="/assets/logo-full-white-c.png" alt="" />
+			<img src="{base}/assets/logo-full-white-c.png" alt="" />
 		</div>
 	</a>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { content } from '$lib/data/notion-content';
 
 	const { copy, steps, issues, channels } = content;
@@ -24,7 +25,7 @@
 				<p class="hero-body">{copy.contribute_body}</p>
 			</div>
 			<div class="hero-mark">
-				<img src="/assets/mark-white-c.png" alt="" />
+				<img src="{base}/assets/mark-white-c.png" alt="" />
 			</div>
 		</div>
 	</section>
