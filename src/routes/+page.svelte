@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { content } from '$lib/data/notion-content';
 	import RepoCard from '$lib/components/RepoCard.svelte';
 
@@ -14,15 +15,15 @@
 		<div class="container">
 			<div class="hero-grid">
 				<div class="rise hero-logo">
-					<img src="/assets/logo-full-white-c.png" alt="Silverback" />
+					<img src="{base}/assets/logo-full-white-c.png" alt="Silverback" />
 				</div>
 				<div class="rise-1">
 					<div class="label kicker">{copy.home_hero_kicker}</div>
 					<h1 class="display hero-title">{site.tagline}</h1>
 					<p class="hero-sub">{site.subline}</p>
 					<div class="hero-actions">
-						<a class="btn btn-light" href="/contribute">{copy.home_hero_primary}</a>
-						<a class="btn btn-outline-light" href="/projects">{copy.home_hero_secondary}</a>
+						<a class="btn btn-light" href={base + '/contribute'}>{copy.home_hero_primary}</a>
+						<a class="btn btn-outline-light" href={base + '/projects'}>{copy.home_hero_secondary}</a>
 					</div>
 				</div>
 			</div>
@@ -63,7 +64,7 @@
 				<div class="label">{copy.home_featured_kicker}</div>
 				<h2 class="section-title">{copy.home_featured_title}</h2>
 			</div>
-			<a class="btn-text" href="/projects">{copy.home_featured_all}</a>
+			<a class="btn-text" href={base + '/projects'}>{copy.home_featured_all}</a>
 		</div>
 		<div class="hairline featured">
 			{#each repos as r (r.name)}
@@ -103,8 +104,8 @@
 				<p class="cta-body">{copy.home_cta_body}</p>
 			</div>
 			<div class="cta-actions">
-				<a class="btn btn-light btn-block" href="/contribute">{copy.home_cta_primary}</a>
-				<a class="btn btn-outline-light btn-block" href="/about">{copy.home_cta_secondary}</a>
+				<a class="btn btn-light btn-block" href={base + '/contribute'}>{copy.home_cta_primary}</a>
+				<a class="btn btn-outline-light btn-block" href={base + '/about'}>{copy.home_cta_secondary}</a>
 			</div>
 		</div>
 	</section>

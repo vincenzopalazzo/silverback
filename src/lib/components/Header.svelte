@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import { content } from '$lib/data/notion-content';
 
@@ -26,14 +27,14 @@
 
 <header>
 	<div class="bar container">
-		<a class="brand" href="/" aria-label="Silverback home">
-			<img src="/assets/mark-black-c.png" alt="Silverback" />
+		<a class="brand" href={base + '/'} aria-label="Silverback home">
+			<img src="{base}/assets/mark-black-c.png" alt="Silverback" />
 			<span>SILVERBACK</span>
 		</a>
 
 		<nav class:open aria-label="Main">
 			{#each nav as item (item.href)}
-				<a class="nav-link" class:active={isActive(item.href)} href={item.href}>
+				<a class="nav-link" class:active={isActive(item.href)} href={base + item.href}>
 					<span>{item.label}</span>
 					<span class="underline"></span>
 				</a>
@@ -42,7 +43,7 @@
 
 		<div class="actions">
 			<a class="stars" href="https://github.com/vincenzopalazzo/silverback" target="_blank" rel="noreferrer"><span>★</span><span>{content.site.stars}</span></a>
-			<a class="join" href="/contribute">Join</a>
+			<a class="join" href={base + '/contribute'}>Join</a>
 			<button class="burger" aria-label="Toggle menu" aria-expanded={open} onclick={() => (open = !open)}>
 				<span></span>
 				<span></span>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { content } from '$lib/data/notion-content';
 
 	const { copy, site, stats, principles, repos, taglines } = content;
@@ -163,13 +164,13 @@
 				<div class="phone">
 					<div class="ph-header">
 						<div class="ph-brand">
-							<img src="/assets/mark-black-c.png" alt="" />
+							<img src="{base}/assets/mark-black-c.png" alt="" />
 							<span>SILVERBACK</span>
 						</div>
 						<div class="ph-burger"><span></span><span></span></div>
 					</div>
 					<div class="ph-hero">
-						<img class="ph-logo" src="/assets/logo-full-white-c.png" alt="" />
+						<img class="ph-logo" src="{base}/assets/logo-full-white-c.png" alt="" />
 						<div class="ph-kicker">Open-source collective</div>
 						<h2>{site.tagline}</h2>
 						<p>{site.subline}</p>
