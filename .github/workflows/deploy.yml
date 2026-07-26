@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Bake Notion content when secrets are configured; falls back to defaults otherwise
+      - run: npm run fetch-content
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_SITE: ${{ vars.NOTION_DB_SITE }}
+          NOTION_DB_COPY: ${{ vars.NOTION_DB_COPY }}
+          NOTION_DB_STATS: ${{ vars.NOTION_DB_STATS }}
+          NOTION_DB_PRINCIPLES: ${{ vars.NOTION_DB_PRINCIPLES }}
+          NOTION_DB_REPOS: ${{ vars.NOTION_DB_REPOS }}
+          NOTION_DB_ACTIVITY: ${{ vars.NOTION_DB_ACTIVITY }}
+          NOTION_DB_TIMELINE: ${{ vars.NOTION_DB_TIMELINE }}
+          NOTION_DB_GOVERNANCE: ${{ vars.NOTION_DB_GOVERNANCE }}
+          NOTION_DB_MAINTAINERS: ${{ vars.NOTION_DB_MAINTAINERS }}
+          NOTION_DB_STEPS: ${{ vars.NOTION_DB_STEPS }}
+          NOTION_DB_ISSUES: ${{ vars.NOTION_DB_ISSUES }}
+          NOTION_DB_CHANNELS: ${{ vars.NOTION_DB_CHANNELS }}
+          NOTION_DB_POSTS: ${{ vars.NOTION_DB_POSTS }}
+          NOTION_DB_TAGLINES: ${{ vars.NOTION_DB_TAGLINES }}
+          NOTION_DB_FOOTER: ${{ vars.NOTION_DB_FOOTER }}
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
