@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { content } from '$lib/data/notion-content';
 
 	const routes: Record<string, string> = {
@@ -19,7 +20,10 @@
 		'Press kit': '#'
 	};
 
-	const href = (label: string): string => routes[label] ?? '#';
+	const href = (label: string): string => {
+		const r = routes[label] ?? '#';
+		return r.startsWith('/') ? base + r : r;
+	};
 
 	const bottomLinks = ['Code of conduct', 'Security', 'Status', 'No trackers on this site'];
 </script>
@@ -28,7 +32,7 @@
 	<div class="container inner">
 		<div class="cols">
 			<div class="intro">
-				<img src="/assets/mark-white-c.png" alt="Silverback" />
+				<img src="{base}/assets/mark-white-c.png" alt="Silverback" />
 				<p>{content.copy.footer_blurb}</p>
 			</div>
 			{#each content.footerCols as col (col.title)}
@@ -44,7 +48,7 @@
 		<div class="bottom">
 			<span>{content.copy.footer_copyright}</span>
 			<div class="bottom-links">
-				<a href="/foundations">Design foundations</a>
+				<a href={base + '/foundations'}>Design foundations</a>
 				{#each bottomLinks as link (link)}
 					<!-- svelte-ignore a11y_invalid_attribute -->
 					<a href={href(link)}>{link}</a>
