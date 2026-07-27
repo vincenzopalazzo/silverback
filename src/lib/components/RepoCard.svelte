@@ -4,7 +4,7 @@
 	let { repo }: { repo: Repo } = $props();
 </script>
 
-<div class="card card-hover">
+{#snippet inner()}
 	<div class="top">
 		<span class="name">{repo.name}</span>
 		<span class="lang">{repo.lang}</span>
@@ -15,15 +15,30 @@
 		<span>⑂ {repo.forks}</span>
 		<span class="when">{repo.updated}</span>
 	</div>
-</div>
+{/snippet}
+
+{#if repo.url}
+	<a class="card card-hover" href={repo.url} target="_blank" rel="noopener">
+		{@render inner()}
+	</a>
+{:else}
+	<div class="card">
+		{@render inner()}
+	</div>
+{/if}
 
 <style>
 	.card {
-		padding: 36px 32px 32px;
 		display: flex;
+		color: inherit;
+		text-decoration: none;
+		padding: 36px 32px 32px;
 		flex-direction: column;
 		gap: 20px;
 		min-height: 250px;
+	}
+
+	a.card {
 		cursor: pointer;
 	}
 
