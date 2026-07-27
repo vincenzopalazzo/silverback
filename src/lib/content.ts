@@ -33,6 +33,7 @@ export interface Repo {
 	stars: string;
 	forks: string;
 	updated: string;
+	url?: string;
 }
 
 export interface ActivityItem {
@@ -131,8 +132,8 @@ export const defaultContent: SiteContent = {
 		home_principles_kicker: 'What we stand for',
 		home_principles_title: 'Three rules,\nheld without exception.',
 		home_featured_kicker: 'Featured work',
-		home_featured_title: 'Six projects. No monoliths.',
-		home_featured_all: 'All 42 repositories →',
+		home_featured_title: 'Seven projects. No monoliths.',
+		home_featured_all: 'All repositories →',
 		home_activity_kicker: 'Live activity',
 		home_activity_title: 'The last 24 hours.',
 		home_activity_body:
@@ -152,7 +153,7 @@ export const defaultContent: SiteContent = {
 		about_governance_body: 'Fourteen maintainers, one written constitution, zero managers.',
 		about_maintainers_title: 'Maintainers',
 
-		projects_kicker: 'Repositories · 42 public',
+		projects_kicker: 'Repositories · 6 public',
 		projects_title: 'Small tools that refuse to become platforms.',
 
 		contribute_kicker: 'Contribute',
@@ -194,7 +195,7 @@ export const defaultContent: SiteContent = {
 	},
 
 	stats: [
-		{ value: '42', label: 'Repositories' },
+		{ value: '6', label: 'Repositories' },
 		{ value: '1,830', label: 'Contributors' },
 		{ value: '12.4k', label: 'Stars' },
 		{ value: 'MIT', label: 'Licence' }
@@ -220,52 +221,66 @@ export const defaultContent: SiteContent = {
 
 	repos: [
 		{
-			name: 'silverback/core',
+			name: 'lampo.rs',
 			lang: 'Rust',
-			desc: 'Deterministic build kernel for polyglot monorepos.',
-			stars: '8.2k',
-			forks: '612',
-			updated: '2h ago'
+			desc: 'An experimental implementation of a tiny Lightning node — lampo is lightning in Italian.',
+			stars: '64',
+			forks: '26',
+			updated: '2w ago',
+			url: 'https://github.com/vincenzopalazzo/lampo.rs'
 		},
 		{
-			name: 'silverback/forge',
-			lang: 'TypeScript',
-			desc: 'Composable CI primitives you can read in one sitting.',
-			stars: '4.1k',
-			forks: '388',
-			updated: 'Yesterday'
+			name: 'bitchat-to-sonar',
+			lang: 'Swift',
+			desc: 'Sonar: sense who is nearby before you see them. Bluetooth peer discovery as a feature, not plumbing.',
+			stars: '2',
+			forks: '2',
+			updated: 'Today',
+			url: 'https://github.com/hedwig-corp/bitchat-to-sonar'
 		},
 		{
-			name: 'silverback/atlas',
-			lang: 'Go',
-			desc: 'Service topology inferred from your code, not your YAML.',
-			stars: '2.7k',
-			forks: '204',
-			updated: '3d ago'
-		},
-		{
-			name: 'silverback/quiet',
+			name: 'cdk-ldk-server-processor',
 			lang: 'Rust',
-			desc: 'Structured logging without the ceremony or the vendor.',
-			stars: '1.9k',
-			forks: '156',
-			updated: '5d ago'
+			desc: 'CDK gRPC payment processor backed by an external ldk-server daemon.',
+			stars: '0',
+			forks: '0',
+			updated: 'Today',
+			url: 'https://github.com/vincenzopalazzo/cdk-ldk-server-processor'
 		},
 		{
-			name: 'silverback/plinth',
-			lang: 'C',
-			desc: 'Tiny, auditable cryptographic primitives. 4,000 lines.',
-			stars: '1.2k',
-			forks: '98',
-			updated: '1w ago'
+			name: 'bitchat',
+			lang: 'Swift',
+			desc: 'Bluetooth mesh chat with IRC vibes — iOS and macOS client.',
+			stars: '0',
+			forks: '1',
+			updated: 'Today',
+			url: 'https://github.com/vincenzopalazzo/bitchat'
 		},
 		{
-			name: 'silverback/canopy',
-			lang: 'Python',
-			desc: 'Reproducible notebooks that survive being handed over.',
-			stars: '940',
-			forks: '77',
-			updated: '2w ago'
+			name: 'bitchat-android',
+			lang: 'Kotlin',
+			desc: 'Bluetooth mesh chat with IRC vibes — Android client.',
+			stars: '0',
+			forks: '0',
+			updated: 'Today',
+			url: 'https://github.com/vincenzopalazzo/bitchat-android'
+		},
+		{
+			name: 'cashu-wallet',
+			lang: 'Swift',
+			desc: 'Cashu ecash wallet for iOS and Android.',
+			stars: '0',
+			forks: '0',
+			updated: 'Today',
+			url: 'https://github.com/vincenzopalazzo/cashu-wallet'
+		},
+		{
+			name: 'lnproof.space',
+			lang: 'In the lab',
+			desc: 'Not public yet — watch this space.',
+			stars: '—',
+			forks: '—',
+			updated: 'Soon'
 		}
 	],
 
@@ -496,7 +511,7 @@ export const defaultContent: SiteContent = {
 	],
 
 	footerCols: [
-		{ title: 'Projects', links: ['Core', 'Forge', 'Atlas', 'Plinth', 'All repositories'] },
+		{ title: 'Projects', links: ['lampo.rs', 'bitchat', 'Sonar', 'Cashu Wallet', 'All repositories'] },
 		{
 			title: 'Community',
 			links: ['Contribute', 'Governance', 'Maintainers', 'Office hours', 'Code of conduct']

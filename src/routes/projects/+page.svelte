@@ -25,19 +25,29 @@
 		<div class="spacer"></div>
 	</div>
 
+	{#snippet row(r: (typeof repos)[number])}
+		<div class="cell-name">
+			<div class="name mono">{r.name}</div>
+			<div class="lang mono">{r.lang}</div>
+		</div>
+		<p class="desc">{r.desc}</p>
+		<div class="meta mono">
+			<span>★ {r.stars}</span>
+			<span>{r.updated}</span>
+		</div>
+	{/snippet}
+
 	<section class="list">
 		{#each filtered as r (r.name)}
-			<div class="row card-hover">
-				<div class="cell-name">
-					<div class="name mono">{r.name}</div>
-					<div class="lang mono">{r.lang}</div>
+			{#if r.url}
+				<a class="row card-hover" href={r.url} target="_blank" rel="noopener">
+					{@render row(r)}
+				</a>
+			{:else}
+				<div class="row">
+					{@render row(r)}
 				</div>
-				<p class="desc">{r.desc}</p>
-				<div class="meta mono">
-					<span>★ {r.stars}</span>
-					<span>{r.updated}</span>
-				</div>
-			</div>
+			{/if}
 		{/each}
 	</section>
 </main>
@@ -94,11 +104,16 @@
 
 	.row {
 		display: grid;
+		color: inherit;
+		text-decoration: none;
 		grid-template-columns: minmax(0, 210px) minmax(0, 1fr) minmax(0, 150px);
 		gap: 32px;
 		padding: 32px 0;
 		border-bottom: 1px solid var(--border);
 		align-items: center;
+	}
+
+	a.row {
 		cursor: pointer;
 	}
 
