@@ -286,34 +286,34 @@ export const defaultContent: SiteContent = {
 
 	activity: [
 		{
-			who: 'NR',
-			what: 'Merged: replace the scheduler\u2019s global lock with per-target queues',
-			repo: 'silverback/core #4192',
-			when: '14 min'
-		},
-		{
-			who: 'KA',
-			what: 'Opened RFC 0031: deprecating implicit cache keys',
-			repo: 'silverback/forge',
+			who: 'VP',
+			what: 'Merged: share sheet — pick a recipient instead of broadcasting to the mesh',
+			repo: 'bitchat-to-sonar #447',
 			when: '1 hr'
 		},
 		{
-			who: 'TM',
-			what: 'Reviewed 6 patches from first-time contributors',
-			repo: 'silverback/atlas',
-			when: '3 hr'
+			who: 'VP',
+			what: 'Opened PR: wallet-gate escape path and bounded listener sync',
+			repo: 'lampo.rs',
+			when: '1 hr'
 		},
 		{
-			who: 'JD',
-			what: 'Released v2.8.1 — one CVE, patched in 40 minutes',
-			repo: 'silverback/plinth',
-			when: '9 hr'
+			who: 'VP',
+			what: 'Fixed silent gRPC bind conflicts with a startup self-check',
+			repo: 'cdk-ldk-server-processor',
+			when: '2 hr'
 		},
 		{
-			who: 'LS',
-			what: 'Rewrote the getting-started guide after 12 rounds of feedback',
-			repo: 'silverback/docs',
-			when: '18 hr'
+			who: 'VP',
+			what: 'Stopped iOS nearby peers flapping out of Sonar discovery',
+			repo: 'bitchat-to-sonar #444',
+			when: '2 hr'
+		},
+		{
+			who: 'VP',
+			what: 'Added a get_settings smoke-test client',
+			repo: 'cdk-ldk-server-processor',
+			when: '15 hr'
 		}
 	],
 
