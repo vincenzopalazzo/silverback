@@ -132,7 +132,7 @@ export const defaultContent: SiteContent = {
 		home_principles_kicker: 'What we stand for',
 		home_principles_title: 'Three rules,\nheld without exception.',
 		home_featured_kicker: 'Featured work',
-		home_featured_title: 'Seven projects. No monoliths.',
+		home_featured_title: 'Nine projects. No monoliths.',
 		home_featured_all: 'All repositories →',
 		home_activity_kicker: 'Live activity',
 		home_activity_title: 'The last 24 hours.',
@@ -153,7 +153,7 @@ export const defaultContent: SiteContent = {
 		about_governance_body: 'Fourteen maintainers, one written constitution, zero managers.',
 		about_maintainers_title: 'Maintainers',
 
-		projects_kicker: 'Repositories · 6 public',
+		projects_kicker: 'Repositories · 8 public',
 		projects_title: 'Small tools that refuse to become platforms.',
 
 		contribute_kicker: 'Contribute',
@@ -163,7 +163,8 @@ export const defaultContent: SiteContent = {
 		contribute_issues_title: 'Good first issues',
 		contribute_issues_updated: 'Updated 6 minutes ago',
 		contribute_talk_title: 'Where we talk',
-		contribute_talk_body: 'Asynchronous by default. Nothing important is decided in a voice call.',
+		contribute_talk_body:
+			'Asynchronous by default. Nothing important is decided in a voice call. Silverback coordination moves to Buzz — humans and agents in the same signed rooms.',
 
 		updates_kicker: 'Updates',
 		updates_title: 'Release notes, RFCs and the occasional opinion.',
@@ -195,7 +196,7 @@ export const defaultContent: SiteContent = {
 	},
 
 	stats: [
-		{ value: '6', label: 'Repositories' },
+		{ value: '8', label: 'Repositories' },
 		{ value: '1,830', label: 'Contributors' },
 		{ value: '12.4k', label: 'Stars' },
 		{ value: 'MIT', label: 'Licence' }
@@ -275,6 +276,26 @@ export const defaultContent: SiteContent = {
 			url: 'https://github.com/vincenzopalazzo/cashu-wallet'
 		},
 		{
+			name: 'sentinel',
+			lang: 'TypeScript',
+			desc:
+				'Continuous multi-harness AI security scanning for Bitcoin and Lightning — Loupe, redteam, VVAH, codecrucible, triage, spend stewardship.',
+			stars: '0',
+			forks: '0',
+			updated: 'Today',
+			url: 'https://github.com/hedwig-corp/sentinel'
+		},
+		{
+			name: 'buzz',
+			lang: 'Rust',
+			desc:
+				'Sovereign workspace where humans and agents share rooms, identity, and audit trail — community home for Silverback ops.',
+			stars: '0',
+			forks: '0',
+			updated: 'Today',
+			url: 'https://github.com/vincenzopalazzo/buzz'
+		},
+		{
 			name: 'lnproof.space',
 			lang: 'In the lab',
 			desc: 'Not public yet — watch this space.',
@@ -285,6 +306,12 @@ export const defaultContent: SiteContent = {
 	],
 
 	activity: [
+		{
+			who: 'VP',
+			what: 'Listed Sentinel under Silverback and drafted Buzz community ops for triage',
+			repo: 'sentinel',
+			when: 'Today'
+		},
 		{
 			who: 'VP',
 			what: 'Merged: share sheet — pick a recipient instead of broadcasting to the mesh',
@@ -334,7 +361,7 @@ export const defaultContent: SiteContent = {
 			year: '2025',
 			text: 'Funding moves entirely to an open collective. Every expense is published monthly.'
 		},
-		{ year: '2026', text: '1,830 contributors, 42 repositories, still no full-time employees.' }
+		{ year: '2026', text: 'Sentinel joins the troop: continuous Bitcoin security scanning, coordinated on Buzz, funded as a public good.' }
 	],
 
 	governance: [
@@ -418,6 +445,11 @@ export const defaultContent: SiteContent = {
 
 	channels: [
 		{
+			name: 'Buzz · Sentinel',
+			body: 'Human + agent rooms for fleet ops, triage, and disclosure discipline. Buzz is the coordination plane; the VPS remains the scanner.',
+			meta: 'Community workspace · self-hosted'
+		},
+		{
 			name: 'Discussions',
 			body: 'Long-form questions, design debate, and every RFC thread. Searchable forever.',
 			meta: 'GitHub · 40 posts this week'
@@ -440,6 +472,13 @@ export const defaultContent: SiteContent = {
 	],
 
 	posts: [
+		{
+			kind: 'Security',
+			title: 'Sentinel and the AI security reckoning',
+			excerpt:
+				'After the COLDCARD / AI security conversation went public, continuous multi-harness defense stopped being optional. Sentinel is how Silverback answers — with triage, spend caps, and a Buzz room for humans and agents.',
+			date: '5 Aug 2026'
+		},
 		{
 			kind: 'Release',
 			title: 'Forge 3.0: fewer concepts, faster builds',
@@ -511,7 +550,7 @@ export const defaultContent: SiteContent = {
 	],
 
 	footerCols: [
-		{ title: 'Projects', links: ['lampo.rs', 'bitchat', 'Sonar', 'Cashu Wallet', 'All repositories'] },
+		{ title: 'Projects', links: ['lampo.rs', 'bitchat', 'Sonar', 'Sentinel', 'Buzz', 'Cashu Wallet', 'All repositories'] },
 		{
 			title: 'Community',
 			links: ['Contribute', 'Governance', 'Maintainers', 'Office hours', 'Code of conduct']
